@@ -71,7 +71,7 @@ export function DesktopSideNav({ activeSection, lang, onLanguageChange }: Deskto
           </button>
         </div>
         <div className="text-xs text-ink/40 tracking-wider">
-          © 2024 Virtual Vector
+          © 2026 Virtual Vector
         </div>
       </div>
     </nav>

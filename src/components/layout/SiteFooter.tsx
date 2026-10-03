@@ -1,7 +1,6 @@
-import { Link } from 'react-router-dom';
 import type { Language } from '../../types';
 
-export function SiteFooter({ lang }: { lang: Language }) {
+export function SiteFooter({ lang: _lang }: { lang: Language }) {
   return (
     <footer className="bg-ink-deep text-paper/60 py-12 md:py-24 border-t border-paper/10">
       <div className="max-w-content mx-auto px-5 md:px-[4vw] flex flex-col md:flex-row justify-between items-start md:items-end gap-12">
@@ -17,11 +16,8 @@ export function SiteFooter({ lang }: { lang: Language }) {
         </div>
         
         <div className="flex flex-col gap-4 text-xs tracking-wider md:text-right">
-          <Link to="/PrivacyPolicy" className="hover:text-pink transition-colors inline-block focus:outline-none focus-visible:ring-1 focus-visible:ring-pink rounded-sm">
-            {lang === 'zh' ? '隱私權政策' : 'Privacy Policy'}
-          </Link>
           <div className="text-paper/40">
-            © 2024 Virtual Vector. All Rights Reserved.
+            © 2026 Virtual Vector. All Rights Reserved.
           </div>
         </div>
       </div>
