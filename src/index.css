@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #3F4148;
+  --color-ink-deep: #24252A;
+  --color-dark-end: #3A3C42;
+  --color-paper: #EEEDE8;
+  --color-ink-soft: #74777B;
+  --color-sub-white: #D2D1CA;
+
+  --color-salt: #D9D8D0;
+  --color-mercury: #9EB8BE;
+  --color-sulfur: #D39A36;
+
+  --color-pink: #B75A63;
+  --color-cyan: #9EB8BE;
+  --color-yellow: #D39A36;
+  --color-teal: #6F9290;
+  
+  --color-alchemy-line: rgb(238 237 232 / 26%);
+  --color-glass-glow: rgb(210 224 222 / 18%);
+
+  --color-muted: #CBCBCB;
+
+  --font-display: "Aboreto", serif;
+  --font-body: "Noto Sans TC", sans-serif;
+
+  --ease-editorial: cubic-bezier(0.16, 1, 0.3, 1);
+  
+  --width-rail: 18.5vw;
+  --max-width-content: 1440px;
+}
+
+@layer base {
+  :root {
+    --nav-rail-width: clamp(190px, 18.5vw, 266px);
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+.bg-dark-stage {
+  background: linear-gradient(180deg, var(--color-ink-deep) 0%, var(--color-dark-end) 100%);
+  color: var(--color-paper);
+}
+
+.text-ghost {
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(247, 246, 246, 0.15);
+}
+
+.text-ghost-dark {
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(74, 66, 88, 0.15);
+}

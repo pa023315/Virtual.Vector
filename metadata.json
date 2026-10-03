@@ -1,0 +1,8 @@
+{
+  "name": "Virtual Vector",
+  "description": "虛擬歌手／虛擬藝人招募企劃單頁網站 (Virtual Singer Audition)",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
