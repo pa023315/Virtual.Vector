@@ -55,14 +55,14 @@ export const artistMembers: ArtistMember[] = [
 ];
 
 export const teamMembers: TeamMember[] = [
-  { id: 't1', name: { zh: '桂馬數位 KEIMA', en: 'KEIMA DIGITAL' }, role: { zh: '主創', en: 'Creator' }, imageKey: 'team-1' },
-  { id: 't2', name: { zh: '科碼新媒體', en: 'Keima New Media' }, role: { zh: '動捕支援', en: 'Mocap Support' }, imageKey: 'team-2' },
-  { id: 't3', name: { zh: 'バルス株式会社', en: 'Balus Co., Ltd.' }, role: { zh: '3D角色製作', en: '3D Character Production' }, imageKey: 'team-3' },
-  { id: 't4', name: { zh: '惡兔重工', en: 'Bad Rabbit Heavy Industries' }, role: { zh: '3D角色製作', en: '3D Character Production' }, imageKey: 'team-4' },
+  { id: 't1', name: { zh: '桂馬數位 KEIMA', en: '桂馬數位 KEIMA' }, role: { zh: '主創', en: 'Creator' }, imageKey: 'team-1' },
+  { id: 't2', name: { zh: '科碼新媒體', en: '科碼新媒體' }, role: { zh: '動捕支援', en: 'Mocap Support' }, imageKey: 'team-2' },
+  { id: 't3', name: { zh: 'バルス株式会社', en: 'バルス株式会社' }, role: { zh: '3D角色製作', en: '3D Character Production' }, imageKey: 'team-3' },
+  { id: 't4', name: { zh: '惡兔重工', en: '惡兔重工' }, role: { zh: '3D角色製作', en: '3D Character Production' }, imageKey: 'team-4' },
   { id: 't5', name: { zh: '@reoenl', en: '@reoenl' }, role: { zh: '角色設計', en: 'Character Design' }, imageKey: 'team-5' },
   { id: 't6', name: { zh: '@Akefumi305', en: '@Akefumi305' }, role: { zh: '角色設計', en: 'Character Design' }, imageKey: 'team-6' },
   { id: 't7', name: { zh: '@sayuki_9696', en: '@sayuki_9696' }, role: { zh: '角色設計', en: 'Character Design' }, imageKey: 'team-7' },
-  { id: 't8', name: { zh: '春魚創意', en: 'Spring Fish Creative' }, role: { zh: '商務支援', en: 'Business Support' }, imageKey: 'team-8' }
+  { id: 't8', name: { zh: '春魚創意', en: '春魚創意' }, role: { zh: '商務支援', en: 'Business Support' }, imageKey: 'team-8' }
 ];
 
 export const assetMap: Record<string, string> = {
