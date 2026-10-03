@@ -39,11 +39,11 @@ export interface ArtistMember {
   role: LocalizedString;
   name: LocalizedString;
   description: LocalizedString;
-  element: string;
+  element: LocalizedString;
   ability: LocalizedString;
-  status: string;
-  origin: string;
-  tags: string[];
+  status: LocalizedString;
+  origin: LocalizedString;
+  tags: { zh: string[]; en: string[] };
   symbol: ArtistSymbol;
   tone: ArtistTone;
   profileUrl?: string;

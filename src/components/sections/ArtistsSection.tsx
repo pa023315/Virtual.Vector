@@ -7,9 +7,9 @@ import { cn } from '../../utils/cn';
 
 const getToneColors = (tone: ArtistTone) => {
   switch (tone) {
-    case 'salt': return 'text-[var(--color-salt)] group-hover:drop-shadow-[0_0_12px_rgba(217,216,208,0.4)]';
-    case 'mercury': return 'text-[var(--color-mercury)] group-hover:drop-shadow-[0_0_12px_rgba(158,184,190,0.4)]';
-    case 'sulfur': return 'text-[var(--color-sulfur)] group-hover:drop-shadow-[0_0_12px_rgba(211,154,54,0.4)]';
+    case 'salt': return 'text-[var(--color-salt)] group-hover:drop-shadow-[0_0_12px_rgba(187,237,255,0.4)]';
+    case 'mercury': return 'text-[var(--color-mercury)] group-hover:drop-shadow-[0_0_12px_rgba(251,128,123,0.4)]';
+    case 'sulfur': return 'text-[var(--color-sulfur)] group-hover:drop-shadow-[0_0_12px_rgba(242,227,165,0.4)]';
     default: return 'text-paper group-hover:drop-shadow-[0_0_12px_rgba(255,255,255,0.4)]';
   }
 };
@@ -58,15 +58,15 @@ export function ArtistsSection({ lang }: { lang: Language }) {
           <SectionHeading 
             numberKey="02" 
             title={lang === 'zh' ? '藝人' : 'Artists'} 
-            subtitle="ARTISTS" 
+            subtitle={lang === 'zh' ? '箱庭旅團' : 'ARTISTS'} 
             isDark
           />
           <div className="hidden md:block absolute right-0 top-0 text-[6vw] font-display uppercase tracking-widest text-ghost opacity-20 select-none leading-none pointer-events-none" aria-hidden="true">
-            FLASK TROUPE
+            {lang === 'zh' ? '箱庭旅團' : 'FLASK TROUPE'}
           </div>
           {/* Mobile version ghost text */}
           <div className="md:hidden mt-4 text-3xl font-display uppercase tracking-widest text-ghost opacity-20 select-none leading-none pointer-events-none" aria-hidden="true">
-            FLASK TROUPE
+            {lang === 'zh' ? '箱庭旅團' : 'FLASK TROUPE'}
           </div>
         </div>
 
@@ -96,13 +96,13 @@ export function ArtistsSection({ lang }: { lang: Language }) {
                 className="absolute top-8 -right-4 md:-right-8 origin-bottom-right -rotate-90 text-4xl md:text-5xl font-display uppercase tracking-[0.4em] text-paper/[0.04] select-none pointer-events-none"
                 aria-hidden="true"
               >
-                HOMUNCULUS
+                {lang === 'zh' ? '人造人' : 'HOMUNCULUS'}
               </div>
 
               {/* Top Bar */}
               <div className="flex justify-between items-start text-xs font-display tracking-widest text-paper/60 uppercase relative z-10">
-                <span>{artist.number} / HOMUNCULUS</span>
-                <span className="text-right">FLASK TROUPE</span>
+                <span>{artist.number} / {lang === 'zh' ? '人造人' : 'HOMUNCULUS'}</span>
+                <span className="text-right">{lang === 'zh' ? '箱庭旅團' : 'FLASK TROUPE'}</span>
               </div>
 
               {/* Center Symbol */}
@@ -129,10 +129,9 @@ export function ArtistsSection({ lang }: { lang: Language }) {
               <div className="relative z-10 mt-auto">
                 {/* Alchemical Sample File */}
                 <div className="mb-6 font-mono text-[10px] md:text-xs text-paper/50 tracking-wider uppercase leading-loose border-l border-paper/20 pl-4 py-1">
-                  <div>ELEMENT: <span className={cn(getToneColors(artist.tone))}>{artist.element}</span></div>
-                  <div>ABILITY: {artist.ability[lang]}</div>
-                  <div>STATUS: {artist.status}</div>
-                  <div>ORIGIN: {artist.origin}</div>
+                  <div>{lang === 'zh' ? '元素' : 'ELEMENT'}: <span className={cn(getToneColors(artist.tone))}>{artist.element[lang]}</span></div>
+                  <div>{lang === 'zh' ? '能力' : 'ABILITY'}: {artist.ability[lang]}</div>
+                  <div>{lang === 'zh' ? '狀態' : 'STATUS'}: {artist.status[lang]}</div>
                 </div>
 
                 <div className={cn("text-xs font-display tracking-widest uppercase mb-4", getToneColors(artist.tone))}>
@@ -145,7 +144,7 @@ export function ArtistsSection({ lang }: { lang: Language }) {
                   {artist.description[lang]}
                 </p>
                 <div className="flex flex-wrap gap-2 mb-8">
-                  {artist.tags.map((tag) => (
+                  {artist.tags[lang].map((tag) => (
                     <span key={tag} className="text-[10px] md:text-xs tracking-wider px-2 py-1 border border-paper/20 rounded-sm text-paper/60">
                       {tag}
                     </span>
@@ -166,7 +165,7 @@ export function ArtistsSection({ lang }: { lang: Language }) {
                       if (!artist.socialUrl || artist.socialUrl === '#') e.preventDefault();
                     }}
                   >
-                    PROFILE / SOCIAL
+                    {lang === 'zh' ? '個人檔案 / 社群' : 'PROFILE / SOCIAL'}
                   </a>
                 </div>
               </div>

@@ -16,7 +16,7 @@ export function TeamSection({ lang }: { lang: Language }) {
         <SectionHeading 
           numberKey="03" 
           title={lang === 'zh' ? '計劃團隊' : 'Team'} 
-          subtitle="PROJECT TEAM" 
+          subtitle={lang === 'zh' ? '團隊陣容' : 'PROJECT TEAM'} 
         />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-16 mt-16 md:mt-24">
@@ -25,11 +25,11 @@ export function TeamSection({ lang }: { lang: Language }) {
               key={member.id} 
               className={`flex flex-col gap-6 ${index % 2 === 1 ? 'md:mt-16' : ''}`}
             >
-              <div className="aspect-square w-full overflow-hidden bg-ink/5 rounded-sm">
+              <div className="aspect-square w-full overflow-hidden bg-ink/5 rounded-sm flex items-center justify-center p-6">
                 <img 
                   src={assetMap[member.imageKey]} 
                   alt={member.name[lang]} 
-                  className="w-full h-full object-cover grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-500"
+                  className="max-w-full max-h-full object-contain transition-transform duration-300 hover:scale-105"
                   loading="lazy"
                 />
               </div>

@@ -19,8 +19,8 @@ export function StatementSection({ lang }: { lang: Language }) {
       >
         <SectionHeading 
           numberKey="01" 
-          title={lang === 'zh' ? '從瓶中誕生' : 'Born in the Flask'} 
-          subtitle="ORIGIN" 
+          title={lang === 'zh' ? '箱庭旅團' : 'FLASK TROUPE'} 
+          subtitle="FLASK TROUPE" 
         />
         
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8 mb-20">
