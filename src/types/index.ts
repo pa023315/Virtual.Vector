@@ -48,6 +48,7 @@ export interface ArtistMember {
   tone: ArtistTone;
   profileUrl?: string;
   socialUrl?: string;
+  xUrl?: string;
   imageUrl?: string;
 }
 

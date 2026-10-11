@@ -1,11 +1,11 @@
-import { useState } from 'react';
+import { useState, type ReactNode } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { cn } from '../../utils/cn';
 import { Plus } from 'lucide-react';
 
 interface AccordionProps {
-  title: React.ReactNode;
-  children: React.ReactNode;
+  title: ReactNode;
+  children: ReactNode;
   isOpen?: boolean;
   onToggle?: () => void;
   className?: string;

@@ -148,22 +148,35 @@ export function ArtistsSection({ lang }: { lang: Language }) {
                   ))}
                 </div>
                 
-                <div className="flex gap-4">
-                  <a 
-                    href={artist.socialUrl || '#'} 
-                    className={cn(
-                      "text-xs font-display tracking-widest uppercase pb-1 border-b transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-dark-stage rounded-sm",
-                      "border-paper/20 text-paper/60",
-                      getToneHoverClasses(artist.tone)
-                    )}
-                    target={artist.socialUrl && artist.socialUrl !== '#' ? "_blank" : undefined}
-                    rel={artist.socialUrl && artist.socialUrl !== '#' ? "noopener noreferrer" : undefined}
-                    onClick={(e) => {
-                      if (!artist.socialUrl || artist.socialUrl === '#') e.preventDefault();
-                    }}
-                  >
-                    YouTube
-                  </a>
+                <div className="flex items-center gap-6">
+                  {artist.socialUrl && (
+                    <a 
+                      href={artist.socialUrl} 
+                      className={cn(
+                        "text-xs font-display tracking-widest uppercase pb-1 border-b transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-dark-stage rounded-sm",
+                        "border-paper/20 text-paper/60",
+                        getToneHoverClasses(artist.tone)
+                      )}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      YouTube
+                    </a>
+                  )}
+                  {artist.xUrl && (
+                    <a 
+                      href={artist.xUrl} 
+                      className={cn(
+                        "text-xs font-display tracking-widest uppercase pb-1 border-b transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-dark-stage rounded-sm",
+                        "border-paper/20 text-paper/60",
+                        getToneHoverClasses(artist.tone)
+                      )}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      X
+                    </a>
+                  )}
                 </div>
               </div>
             </motion.article>

@@ -29,6 +29,26 @@ export function HeroDecoration() {
     }
   };
 
+  const haloAnimation = (delay: number) => ({
+    animate: {
+      r: [4, 11, 4],
+      opacity: [0.6, 0, 0.6],
+      transition: {
+        duration: 3.6,
+        delay,
+        repeat: Infinity,
+        ease: "easeInOut"
+      }
+    }
+  });
+
+  const orbitGlow = {
+    animate: {
+      opacity: [0.3, 0.65, 0.3],
+      transition: { duration: 5, repeat: Infinity, ease: "easeInOut" }
+    }
+  };
+
   return (
     <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden" aria-hidden="true">
       {/* Center Container for Logo-relative decorations */}
@@ -78,12 +98,28 @@ export function HeroDecoration() {
               animate="visible"
             />
 
-            {/* Nodes */}
+            {/* Pulsing Energy Trail Overlay */}
+            <motion.path 
+              d="M 50 200 A 150 150 0 0 1 350 170" 
+              stroke="rgba(255, 255, 255, 0.15)" 
+              strokeWidth="1" 
+              strokeDasharray="12 40"
+              fill="transparent"
+              variants={orbitGlow}
+              animate="animate"
+            />
+
+            {/* Nodes & Pulse Halo Rings */}
             {/* Salt */}
+            <motion.circle cx="150" cy="70" stroke="var(--color-salt)" strokeWidth="1" fill="none" variants={haloAnimation(0)} animate="animate" />
             <motion.circle cx="150" cy="70" r="4" fill="var(--color-salt)" custom={0} variants={dotAnimation} initial="hidden" animate="visible" />
+
             {/* Mercury */}
+            <motion.circle cx="270" cy="70" stroke="var(--color-mercury)" strokeWidth="1" fill="none" variants={haloAnimation(1.2)} animate="animate" />
             <motion.circle cx="270" cy="70" r="4" fill="var(--color-mercury)" custom={1} variants={dotAnimation} initial="hidden" animate="visible" />
+
             {/* Sulfur */}
+            <motion.circle cx="350" cy="170" stroke="var(--color-sulfur)" strokeWidth="1" fill="none" variants={haloAnimation(2.4)} animate="animate" />
             <motion.circle cx="350" cy="170" r="4" fill="var(--color-sulfur)" custom={2} variants={dotAnimation} initial="hidden" animate="visible" />
           </svg>
         </div>

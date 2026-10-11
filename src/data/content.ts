@@ -21,6 +21,7 @@ export const artistMembers: ArtistMember[] = [
     symbol: 'circle-bar',
     tone: 'salt',
     socialUrl: 'https://www.youtube.com/@Saltoy.FlaskTroupe',
+    xUrl: 'https://x.com/Saltoy_FT',
   },
   {
     number: '02',
@@ -35,6 +36,7 @@ export const artistMembers: ArtistMember[] = [
     symbol: 'orb-cross',
     tone: 'mercury',
     socialUrl: 'https://www.youtube.com/@Viv.FlaskTroupe',
+    xUrl: 'https://x.com/Vivvv_FT',
   },
   {
     number: '03',
@@ -49,6 +51,7 @@ export const artistMembers: ArtistMember[] = [
     symbol: 'triangle-cross',
     tone: 'sulfur',
     socialUrl: 'https://www.youtube.com/@Reyunna.FlaskTroupe',
+    xUrl: 'https://x.com/Reyunna_FT',
   }
 ];
 
