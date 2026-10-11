@@ -1,56 +1,54 @@
 import type { NavItem, TeamMember, ArtistMember } from '../types';
 
-export const IS_AUDITION_OPEN = false;
-
 export const navItems: NavItem[] = [
   { id: 'hero', label: { zh: '首頁', en: 'HOME' }, numberKey: '00' },
   { id: 'statement', label: { zh: '箱庭旅團', en: 'FLASK TROUPE' }, numberKey: '01' },
-  { id: 'artists', label: { zh: '藝人', en: 'ARTISTS' }, numberKey: '02' },
+  { id: 'artists', label: { zh: '成員', en: 'MEMBERS' }, numberKey: '02' },
   { id: 'team', label: { zh: '計劃團隊', en: 'TEAM' }, numberKey: '03' },
 ];
 
 export const artistMembers: ArtistMember[] = [
   {
     number: '01',
-    name: { zh: '藝人一號：聲音座標', en: 'Artist 01: Vocal Vector' },
-    role: { zh: '主唱歌手', en: 'VOCALIST' },
-    description: { zh: '以獨特的聲線劃破寂靜，尋找記憶與未來的共鳴點。', en: 'Piercing the silence with a unique voice, finding the resonance between memories and the future.' },
+    name: { zh: '砂惿 Saltøy', en: 'Saltøy' },
+    role: { zh: '', en: '' },
+    description: { zh: '細膩晶透的歌聲，淨化你的心靈。', en: 'A delicate and crystalline voice that purifies your soul.' },
     element: { zh: '鹽', en: 'SALT' },
-    ability: { zh: '操縱結晶體', en: 'MEMORY CRYSTALLIZATION' },
+    ability: { zh: '晶透聲體', en: 'MEMORY CRYSTALLIZATION' },
     status: { zh: '已覺醒', en: 'AWAKENED' },
     origin: { zh: '素體 01 號', en: 'VESSEL NO.01' },
-    tags: { zh: ['主唱', '夢幻流行'], en: ['VOCALIST', 'DREAM POP'] },
+    tags: { zh: ['夢幻流行'], en: ['DREAM POP'] },
     symbol: 'circle-bar',
     tone: 'salt',
-    socialUrl: '#',
+    socialUrl: 'https://www.youtube.com/@Saltoy.FlaskTroupe',
   },
   {
     number: '02',
-    name: { zh: '藝人二號：透明節拍', en: 'Artist 02: Lucid Beat' },
-    role: { zh: '音樂製作', en: 'PRODUCER' },
-    description: { zh: '在虛擬空間中編織透明的節奏，將心跳轉化為電子的脈動。', en: 'Weaving transparent rhythms in virtual space, transforming heartbeats into electronic pulses.' },
+    name: { zh: '維芙 Viv', en: 'Viv' },
+    role: { zh: '', en: '' },
+    description: { zh: '甜膩聲音的陷阱，流轉你的日常', en: 'A sweet vocal trap, drifting through your daily rhythm.' },
     element: { zh: '水銀', en: 'MERCURY' },
-    ability: { zh: '液態共鳴', en: 'LIQUID RESONANCE' },
+    ability: { zh: '汞流無垠', en: 'LIQUID RESONANCE' },
     status: { zh: '已覺醒', en: 'AWAKENED' },
     origin: { zh: '素體 02 號', en: 'VESSEL NO.02' },
-    tags: { zh: ['音樂製作', '電子音樂'], en: ['PRODUCER', 'ELECTRONICA'] },
+    tags: { zh: ['電子音樂'], en: ['ELECTRONICA'] },
     symbol: 'orb-cross',
     tone: 'mercury',
-    socialUrl: '#',
+    socialUrl: 'https://www.youtube.com/@Viv.FlaskTroupe',
   },
   {
     number: '03',
-    name: { zh: '藝人三號：舞台訊號', en: 'Artist 03: Stage Signal' },
-    role: { zh: '舞台表演', en: 'PERFORMER' },
-    description: { zh: '用肢體與光影傳遞能量，在虛無中構築真實的舞台體驗。', en: 'Transmitting energy through body and light, constructing a real stage experience in the void.' },
+    name: { zh: '琉南 Reyunna', en: 'Reyunna' },
+    role: { zh: '', en: '' },
+    description: { zh: '燃燒幽火的帥氣，在舞台上絢爛', en: 'The cool brilliance of burning ghost flames, radiating on stage.' },
     element: { zh: '硫磺', en: 'SULFUR' },
-    ability: { zh: '熱能舞動', en: 'THERMAL DANCE' },
+    ability: { zh: '磺塊能量', en: 'THERMAL DANCE' },
     status: { zh: '已覺醒', en: 'AWAKENED' },
     origin: { zh: '素體 03 號', en: 'VESSEL NO.03' },
-    tags: { zh: ['舞台表演', '未來靈魂'], en: ['PERFORMER', 'FUTURE SOUL'] },
+    tags: { zh: ['未來靈魂'], en: ['FUTURE SOUL'] },
     symbol: 'triangle-cross',
     tone: 'sulfur',
-    socialUrl: '#',
+    socialUrl: 'https://www.youtube.com/@Reyunna.FlaskTroupe',
   }
 ];
 

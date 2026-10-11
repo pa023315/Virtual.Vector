@@ -29,19 +29,19 @@ export function ArtistSymbol({ symbol, className }: Props) {
           viewBox="0 0 100 100" 
           fill="none" 
           stroke="currentColor" 
-          strokeWidth="2.5" 
+          strokeWidth="2.8" 
           strokeLinecap="round" 
           strokeLinejoin="round" 
           className={className}
           aria-hidden="true"
         >
-          {/* Top horns */}
-          <path d="M 30 25 A 18 18 0 0 0 70 25" />
+          {/* Top horns / crescent */}
+          <path d="M 28 8 C 28 22, 40 30, 50 30 C 60 30, 72 22, 72 8" />
           {/* Main circle */}
           <circle cx="50" cy="48" r="18" />
           {/* Bottom cross */}
-          <line x1="50" y1="66" x2="50" y2="90" />
-          <line x1="35" y1="80" x2="65" y2="80" />
+          <line x1="50" y1="66" x2="50" y2="92" />
+          <line x1="38" y1="79" x2="62" y2="79" />
         </svg>
       );
     case 'triangle-cross':

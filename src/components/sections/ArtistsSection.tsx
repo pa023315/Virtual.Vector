@@ -57,8 +57,8 @@ export function ArtistsSection({ lang }: { lang: Language }) {
         <div className="flex flex-col md:flex-row md:items-start justify-between mb-16 md:mb-24 relative">
           <SectionHeading 
             numberKey="02" 
-            title={lang === 'zh' ? '藝人' : 'Artists'} 
-            subtitle={lang === 'zh' ? '箱庭旅團' : 'ARTISTS'} 
+            title={lang === 'zh' ? '成員' : 'Members'} 
+            subtitle={lang === 'zh' ? '箱庭旅團' : 'FLASK TROUPE'} 
             isDark
           />
           <div className="hidden md:block absolute right-0 top-0 text-[6vw] font-display uppercase tracking-widest text-ghost opacity-20 select-none leading-none pointer-events-none" aria-hidden="true">
@@ -134,9 +134,6 @@ export function ArtistsSection({ lang }: { lang: Language }) {
                   <div>{lang === 'zh' ? '狀態' : 'STATUS'}: {artist.status[lang]}</div>
                 </div>
 
-                <div className={cn("text-xs font-display tracking-widest uppercase mb-4", getToneColors(artist.tone))}>
-                  {artist.role[lang]}
-                </div>
                 <h3 className="text-2xl md:text-3xl font-display tracking-widest mb-4">
                   {artist.name[lang]}
                 </h3>
@@ -165,7 +162,7 @@ export function ArtistsSection({ lang }: { lang: Language }) {
                       if (!artist.socialUrl || artist.socialUrl === '#') e.preventDefault();
                     }}
                   >
-                    {lang === 'zh' ? '個人檔案 / 社群' : 'PROFILE / SOCIAL'}
+                    YouTube
                   </a>
                 </div>
               </div>

@@ -99,11 +99,11 @@ export function HeroDecoration() {
         
         {/* Mercury */}
         <motion.div className="absolute top-[5%] right-[15%] text-mercury/20 md:text-mercury/30 w-8 h-12" variants={breathAnimation} animate="animate">
-          <svg viewBox="0 0 24 36" fill="none" stroke="currentColor" strokeWidth="1">
-            <path d="M4 8 A8 8 0 0 1 20 8" />
+          <svg viewBox="0 0 24 36" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M 5 3 C 5 7, 8 10, 12 10 C 16 10, 19 7, 19 3" />
             <circle cx="12" cy="16" r="6" />
-            <line x1="12" y1="22" x2="12" y2="34" />
-            <line x1="7" y1="28" x2="17" y2="28" />
+            <line x1="12" y1="22" x2="12" y2="33" />
+            <line x1="8" y1="27.5" x2="16" y2="27.5" />
           </svg>
         </motion.div>
 

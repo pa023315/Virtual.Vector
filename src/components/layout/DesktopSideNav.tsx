@@ -19,7 +19,7 @@ export function DesktopSideNav({ activeSection, lang, onLanguageChange }: Deskto
   return (
     <nav className="hidden lg:flex fixed left-0 top-0 h-[100vh] w-[var(--nav-rail-width)] bg-paper border-r border-ink/10 flex-col justify-between py-12 px-8 z-navigation">
       <div className="flex flex-col gap-16">
-        <div className="font-display tracking-[0.2em] text-sm text-ink transform -rotate-180" style={{ writingMode: 'vertical-rl' }}>
+        <div className="font-display tracking-[0.2em] text-sm text-ink select-none" style={{ writingMode: 'vertical-rl' }}>
           {lang === 'zh' ? '導覽目錄' : 'CONTENT'}
         </div>
         
