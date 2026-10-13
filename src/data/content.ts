@@ -66,8 +66,8 @@ export const teamMembers: TeamMember[] = [
 export const assetMap: Record<string, string> = {
   'hero-bg': 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop', // Placeholder abstract
   'team-1': 'https://i.meee.com.tw/KO5109l.png',
-  'team-2': 'https://i.meee.com.tw/SV7O5PD.jpg',
-  'team-3': 'https://i.meee.com.tw/6WjgUfj.png',
+  'team-2': 'https://i.meee.com.tw/MoY24Rr.png',
+  'team-3': 'https://i.meee.com.tw/qvbb8jB.png',
   'team-4': 'https://i.meee.com.tw/vWgyYpZ.png',
   'team-5': 'https://i.meee.com.tw/V1hZdtZ.png',
   'team-6': 'https://i.meee.com.tw/V1hZdtZ.png',
