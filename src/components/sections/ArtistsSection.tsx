@@ -137,16 +137,18 @@ export function ArtistsSection({ lang }: { lang: Language }) {
                 <h3 className="text-2xl md:text-3xl font-display tracking-widest mb-4">
                   {artist.name[lang]}
                 </h3>
-                <p className="text-sm md:text-base text-paper/70 leading-relaxed mb-6">
+                <p className="text-sm md:text-base text-paper/70 leading-relaxed mb-8">
                   {artist.description[lang]}
                 </p>
-                <div className="flex flex-wrap gap-2 mb-8">
-                  {artist.tags[lang].map((tag) => (
-                    <span key={tag} className="text-[10px] md:text-xs tracking-wider px-2 py-1 border border-paper/20 rounded-sm text-paper/60">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
+                {artist.tags[lang].length > 0 && (
+                  <div className="flex flex-wrap gap-2 mb-8">
+                    {artist.tags[lang].map((tag) => (
+                      <span key={tag} className="text-[10px] md:text-xs tracking-wider px-2 py-1 border border-paper/20 rounded-sm text-paper/60">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                )}
                 
                 <div className="flex items-center gap-6">
                   {artist.socialUrl && (

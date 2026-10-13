@@ -17,7 +17,7 @@ export const artistMembers: ArtistMember[] = [
     ability: { zh: '晶透聲體', en: 'MEMORY CRYSTALLIZATION' },
     status: { zh: '已覺醒', en: 'AWAKENED' },
     origin: { zh: '素體 01 號', en: 'VESSEL NO.01' },
-    tags: { zh: ['夢幻流行'], en: ['DREAM POP'] },
+    tags: { zh: [], en: [] },
     symbol: 'circle-bar',
     tone: 'salt',
     socialUrl: 'https://www.youtube.com/@Saltoy.FlaskTroupe',
@@ -32,7 +32,7 @@ export const artistMembers: ArtistMember[] = [
     ability: { zh: '汞流無垠', en: 'LIQUID RESONANCE' },
     status: { zh: '已覺醒', en: 'AWAKENED' },
     origin: { zh: '素體 02 號', en: 'VESSEL NO.02' },
-    tags: { zh: ['電子音樂'], en: ['ELECTRONICA'] },
+    tags: { zh: [], en: [] },
     symbol: 'orb-cross',
     tone: 'mercury',
     socialUrl: 'https://www.youtube.com/@Viv.FlaskTroupe',
@@ -47,7 +47,7 @@ export const artistMembers: ArtistMember[] = [
     ability: { zh: '磺塊能量', en: 'THERMAL DANCE' },
     status: { zh: '已覺醒', en: 'AWAKENED' },
     origin: { zh: '素體 03 號', en: 'VESSEL NO.03' },
-    tags: { zh: ['未來靈魂'], en: ['FUTURE SOUL'] },
+    tags: { zh: [], en: [] },
     symbol: 'triangle-cross',
     tone: 'sulfur',
     socialUrl: 'https://www.youtube.com/@Reyunna.FlaskTroupe',
@@ -60,10 +60,7 @@ export const teamMembers: TeamMember[] = [
   { id: 't2', name: { zh: '科碼新媒體', en: '科碼新媒體' }, role: { zh: '動捕支援', en: 'Mocap Support' }, imageKey: 'team-2' },
   { id: 't3', name: { zh: 'バルス株式会社', en: 'バルス株式会社' }, role: { zh: '3D角色製作', en: '3D Character Production' }, imageKey: 'team-3' },
   { id: 't8', name: { zh: '春魚創意', en: '春魚創意' }, role: { zh: '商務支援', en: 'Business Support' }, imageKey: 'team-8' },
-  { id: 't4', name: { zh: '惡兔重工', en: '惡兔重工' }, role: { zh: '3D角色製作', en: '3D Character Production' }, imageKey: 'team-4' },
-  { id: 't6', name: { zh: '@Akefumi305', en: '@Akefumi305' }, role: { zh: '角色設計', en: 'Character Design' }, imageKey: 'team-6' },
-  { id: 't7', name: { zh: '@sayuki_9696', en: '@sayuki_9696' }, role: { zh: '角色設計', en: 'Character Design' }, imageKey: 'team-7' },
-  { id: 't5', name: { zh: '@reoenl', en: '@reoenl' }, role: { zh: '角色設計', en: 'Character Design' }, imageKey: 'team-5' }
+  { id: 't4', name: { zh: '惡兔重工', en: '惡兔重工' }, role: { zh: '3D角色製作', en: '3D Character Production' }, imageKey: 'team-4' }
 ];
 
 export const assetMap: Record<string, string> = {
