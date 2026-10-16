@@ -62,7 +62,7 @@ export function StatementSection({ lang }: { lang: Language }) {
           <iframe 
             width="100%" 
             height="100%" 
-            src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ?rel=0" 
+            src="https://www.youtube-nocookie.com/embed/T2TPzIjBNNo?rel=0" 
             title="Virtual Vector Statement Video" 
             frameBorder="0" 
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
