@@ -1,11 +1,25 @@
+import { cn } from '../../utils/cn';
 import type { ArtistSymbol as SymbolType } from '../../types';
 
 interface Props {
   symbol: SymbolType;
   className?: string;
+  imageUrl?: string;
+  alt?: string;
 }
 
-export function ArtistSymbol({ symbol, className }: Props) {
+export function ArtistSymbol({ symbol, className, imageUrl, alt }: Props) {
+  if (imageUrl) {
+    return (
+      <img 
+        src={imageUrl} 
+        alt={alt || "Symbol"} 
+        className={cn(className, "object-contain rounded-2xl border border-paper/10 shadow-lg")}
+        loading="lazy"
+      />
+    );
+  }
+
   switch (symbol) {
     case 'circle-bar':
       return (

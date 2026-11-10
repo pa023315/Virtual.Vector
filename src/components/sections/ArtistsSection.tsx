@@ -23,6 +23,15 @@ const getToneHoverClasses = (tone: ArtistTone) => {
   }
 };
 
+const getImageToneGlow = (tone: ArtistTone) => {
+  switch (tone) {
+    case 'salt': return 'drop-shadow-[0_0_16px_rgba(187,237,255,0.35)] group-hover:drop-shadow-[0_0_24px_rgba(187,237,255,0.55)]';
+    case 'mercury': return 'drop-shadow-[0_0_16px_rgba(251,128,123,0.35)] group-hover:drop-shadow-[0_0_24px_rgba(251,128,123,0.55)]';
+    case 'sulfur': return 'drop-shadow-[0_0_16px_rgba(242,227,165,0.35)] group-hover:drop-shadow-[0_0_24px_rgba(242,227,165,0.55)]';
+    default: return 'drop-shadow-[0_0_16px_rgba(255,255,255,0.35)] group-hover:drop-shadow-[0_0_24px_rgba(255,255,255,0.55)]';
+  }
+};
+
 export function ArtistsSection({ lang }: { lang: Language }) {
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -81,34 +90,28 @@ export function ArtistsSection({ lang }: { lang: Language }) {
             <motion.article 
               key={artist.number}
               variants={itemVariants}
-              className="group relative flex-1 min-h-[720px] p-6 md:p-8 flex flex-col justify-between overflow-hidden transition-transform duration-500 hover:-translate-y-2 focus-within:-translate-y-2 motion-reduce:transition-none motion-reduce:hover:translate-y-0"
+              className="group relative flex-1 p-8 md:p-10 lg:p-12 flex flex-col overflow-hidden transition-transform duration-500 hover:-translate-y-2 focus-within:-translate-y-2 motion-reduce:transition-none motion-reduce:hover:translate-y-0"
             >
-              {/* Background Number */}
-              <div 
-                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[30vw] md:text-[15vw] font-display text-paper/[0.03] select-none pointer-events-none transition-transform duration-700 group-hover:scale-105 motion-reduce:transition-none motion-reduce:group-hover:scale-100"
-                aria-hidden="true"
-              >
-                {artist.number}
-              </div>
               
               {/* Vertical Watermark */}
               <div 
-                className="absolute top-8 -right-4 md:-right-8 origin-bottom-right -rotate-90 text-4xl md:text-5xl font-display uppercase tracking-[0.4em] text-paper/[0.04] select-none pointer-events-none"
+                className="absolute top-10 -right-4 md:-right-8 origin-bottom-right -rotate-90 text-5xl md:text-6xl font-display uppercase tracking-[0.45em] text-paper/[0.04] select-none pointer-events-none"
                 aria-hidden="true"
               >
                 {lang === 'zh' ? '人造人' : 'HOMUNCULUS'}
               </div>
 
               {/* Top Bar */}
-              <div className="flex justify-between items-start text-xs font-display tracking-widest text-paper/60 uppercase relative z-10">
-                <span>{artist.number} / {lang === 'zh' ? '人造人' : 'HOMUNCULUS'}</span>
-                <span className="text-right">{lang === 'zh' ? '箱庭旅團' : 'FLASK TROUPE'}</span>
+              <div className="flex justify-between items-start text-xs md:text-sm font-display tracking-widest text-paper/60 uppercase relative z-10">
+                <span>
+                  {artist.number} / {lang === 'zh' ? '人造人' : 'HOMUNCULUS'}&nbsp; <span className={cn(getToneColors(artist.tone))}>{artist.element[lang]}</span>
+                </span>
               </div>
 
-              {/* Center Symbol */}
-              <div className="flex-1 flex items-center justify-center relative z-10 my-12">
+              {/* Center Symbol / Character Image - 1 line-height spacing above & below */}
+              <div className="flex items-center justify-center relative z-10 my-5 md:my-6">
                 <motion.div
-                  animate={{ y: [0, -8, 0] }}
+                  animate={{ y: [0, -6, 0] }}
                   transition={{ 
                     duration: 7, 
                     repeat: Infinity, 
@@ -116,46 +119,47 @@ export function ArtistsSection({ lang }: { lang: Language }) {
                     times: [0, 0.5, 1]
                   }}
                   className={cn(
-                    "w-32 h-32 md:w-40 md:h-40 transition-all duration-700 motion-reduce:animate-none",
-                    getToneColors(artist.tone),
-                    "drop-shadow-[0_0_4px_currentColor]"
+                    "w-44 h-44 md:w-52 md:h-52 lg:w-56 lg:h-56 transition-all duration-700 motion-reduce:animate-none flex items-center justify-center",
+                    !artist.imageUrl && getToneColors(artist.tone),
+                    !artist.imageUrl && "drop-shadow-[0_0_6px_currentColor]",
+                    artist.imageUrl && getImageToneGlow(artist.tone)
                   )}
                 >
-                  <ArtistSymbol symbol={artist.symbol} className="w-full h-full" />
+                  <ArtistSymbol 
+                    symbol={artist.symbol} 
+                    imageUrl={artist.imageUrl}
+                    alt={artist.name[lang]}
+                    className="w-full h-full" 
+                  />
                 </motion.div>
               </div>
 
               {/* Bottom Content */}
-              <div className="relative z-10 mt-auto">
-                {/* Alchemical Sample File */}
-                <div className="mb-6 font-mono text-[10px] md:text-xs text-paper/50 tracking-wider uppercase leading-loose border-l border-paper/20 pl-4 py-1">
-                  <div>{lang === 'zh' ? '元素' : 'ELEMENT'}: <span className={cn(getToneColors(artist.tone))}>{artist.element[lang]}</span></div>
-                  <div>{lang === 'zh' ? '能力' : 'ABILITY'}: {artist.ability[lang]}</div>
-                  <div>{lang === 'zh' ? '狀態' : 'STATUS'}: {artist.status[lang]}</div>
+              <div className="relative z-10 flex-1 flex flex-col justify-between">
+                <div>
+                  <h3 className="text-3xl md:text-4xl font-display tracking-widest mb-4">
+                    {artist.name[lang]}
+                  </h3>
+                  <p className="text-base md:text-lg text-paper/75 leading-relaxed mb-8">
+                    {artist.description[lang]}
+                  </p>
+                  {artist.tags[lang].length > 0 && (
+                    <div className="flex flex-wrap gap-2.5 mb-8">
+                      {artist.tags[lang].map((tag) => (
+                        <span key={tag} className="text-xs tracking-wider px-2.5 py-1.5 border border-paper/20 rounded-sm text-paper/60">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  )}
                 </div>
-
-                <h3 className="text-2xl md:text-3xl font-display tracking-widest mb-4">
-                  {artist.name[lang]}
-                </h3>
-                <p className="text-sm md:text-base text-paper/70 leading-relaxed mb-8">
-                  {artist.description[lang]}
-                </p>
-                {artist.tags[lang].length > 0 && (
-                  <div className="flex flex-wrap gap-2 mb-8">
-                    {artist.tags[lang].map((tag) => (
-                      <span key={tag} className="text-[10px] md:text-xs tracking-wider px-2 py-1 border border-paper/20 rounded-sm text-paper/60">
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                )}
                 
-                <div className="flex items-center gap-6">
+                <div className="flex items-center gap-8 pt-4">
                   {artist.socialUrl && (
                     <a 
                       href={artist.socialUrl} 
                       className={cn(
-                        "text-xs font-display tracking-widest uppercase pb-1 border-b transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-dark-stage rounded-sm",
+                        "text-sm md:text-base font-display tracking-widest uppercase pb-1.5 border-b transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-dark-stage rounded-sm",
                         "border-paper/20 text-paper/60",
                         getToneHoverClasses(artist.tone)
                       )}
@@ -169,7 +173,7 @@ export function ArtistsSection({ lang }: { lang: Language }) {
                     <a 
                       href={artist.xUrl} 
                       className={cn(
-                        "text-xs font-display tracking-widest uppercase pb-1 border-b transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-dark-stage rounded-sm",
+                        "text-sm md:text-base font-display tracking-widest uppercase pb-1.5 border-b transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-dark-stage rounded-sm",
                         "border-paper/20 text-paper/60",
                         getToneHoverClasses(artist.tone)
                       )}

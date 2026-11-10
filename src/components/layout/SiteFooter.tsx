@@ -28,6 +28,14 @@ export function SiteFooter({ lang }: { lang: Language }) {
                   FB
                 </a>
                 <a 
+                  href="https://www.instagram.com/virtual.vector.tw/" 
+                  className="hover:text-pink transition-colors focus:outline-none focus-visible:ring-1 focus-visible:ring-pink rounded-sm" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                >
+                  IG
+                </a>
+                <a 
                   href="https://x.com/virtual_tw" 
                   className="hover:text-pink transition-colors focus:outline-none focus-visible:ring-1 focus-visible:ring-pink rounded-sm" 
                   target="_blank" 
@@ -63,12 +71,28 @@ export function SiteFooter({ lang }: { lang: Language }) {
                   FB
                 </a>
                 <a 
+                  href="https://www.instagram.com/flask_troupe" 
+                  className="hover:text-pink transition-colors focus:outline-none focus-visible:ring-1 focus-visible:ring-pink rounded-sm" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                >
+                  IG
+                </a>
+                <a 
                   href="https://x.com/FlaskTroupe" 
                   className="hover:text-pink transition-colors focus:outline-none focus-visible:ring-1 focus-visible:ring-pink rounded-sm" 
                   target="_blank" 
                   rel="noopener noreferrer"
                 >
                   X
+                </a>
+                <a 
+                  href="https://www.threads.com/@flask_troupe" 
+                  className="hover:text-pink transition-colors focus:outline-none focus-visible:ring-1 focus-visible:ring-pink rounded-sm" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                >
+                  Threads
                 </a>
                 <a 
                   href="https://www.youtube.com/@FlaskTroupe" 
